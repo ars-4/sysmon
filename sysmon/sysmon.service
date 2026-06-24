@@ -1,0 +1,23 @@
+[Unit]
+Description=SysMon System Dashboard
+Documentation=https://github.com/your-repo/sysmon
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/sysmon
+ExecStart=/usr/bin/python3 /opt/sysmon/server.py
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=sysmon
+
+# Security hardening (comment out if you hit permission errors with psutil)
+PrivateTmp=true
+NoNewPrivileges=false
+
+[Install]
+WantedBy=multi-user.target
