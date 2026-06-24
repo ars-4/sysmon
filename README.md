@@ -9,6 +9,8 @@ Single Python server, single HTML file, zero dependencies beyond `psutil`.
 
 ---
 
+![SysMon Dashboard](Screenshot%202026-06-25%20020750.png)
+
 ## Features
 
 | Tab | What you get |
